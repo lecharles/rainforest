@@ -2,7 +2,7 @@
 <!-- <p>Find me in app/views/products/index.html.erb</p> -->
 <% @products.each do |product| %>
   <li>
-      <ul><p><a href="/products/1"><%= product.name %></a> <%= product.description %> <%= product.price_in_cents %> </p></ul>
+      <ul><p><a href="/products/1"><%= product.name %></a> <%= product.description %> €<%= product.formatted_price %> </p></ul>
   </li>
 <% end  %>
 

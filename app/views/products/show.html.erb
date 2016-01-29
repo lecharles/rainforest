@@ -3,7 +3,7 @@
 <%= link_to 'Back to basics', products_path %>
 
 <p><%= @product.name %>, <%= @product.description %></p>
-<p><%= @product.price_in_cents %> €cts</p>
+<p>€<%= @product.formatted_price %></p>
 
 <!--
 To Do's:
