@@ -14,8 +14,7 @@
       <%= review.comment %>
       <br>
       <% if review.user != nil %>
-        <em> Written by your's truly <%= review.user.email %></em>
-        Back then in: <%= review.created_at %>
+        <em> Written by <%= review.user.name %> available at <%= review.user.email %> Back then in: <%= review.created_at %></em>
       <% end %>
     </p>
   <% end %>
@@ -46,7 +45,7 @@
   <% end %>
 
 <% else %>
-  <p>yoO <%= link_to "You gotta log in", new_session_path %> to add a review.</p> 
+  <p>yoO <%= link_to "You gotta log in", new_session_path %> to add a review.</p>
 <% end %>
 
 <!--
