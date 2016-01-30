@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'products#index'
-  resources :products
+  resources :products do
+    resources :reviews, only: [:show, :create, :destroy]
+  end
   resources :users, only: [:new, :create] #create the 7 RESTful routes limiting it ONLY TO "get new" & "post create"
   resources :sessions, only: [:new, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
