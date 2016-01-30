@@ -8,3 +8,6 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 end
+
+#THE ABOVE IS THE RESULT OF RUNNING:
+#$ rails g model user email:string password_digest:string

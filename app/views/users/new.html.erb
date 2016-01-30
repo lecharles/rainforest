@@ -28,10 +28,10 @@
     <%= f.password_field :password_confirmation %>
   </div>
 
-  <div class="actions"><%= f.submit %></div>
+  <div class="actions"><%= f.submit "sign in" %></div>
 
 <% end %>
 
 <!-- Questions:
-How to add a value of "Sign Up!" instead of "create user" when it seems we only have access to the form's div ?
-Would it be leveraging the Partial _form?  -->
+Q: How to add a value of "Sign Up!" instead of "create user" when it seems we only have access to the form's div ?
+R: The beauty of helper form is allowing you to enter the value of that rails version on input tag as shown in "sign in" at L31  -->
