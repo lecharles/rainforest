@@ -2,7 +2,7 @@
 <!-- <p>Find me in app/views/products/index.html.erb</p> -->
 <% @products.each do |product| %>
   <li>
-      <ul><p><%= link_to product_path, product , "product.name"  %></a> <%= product.description %> €<%= product.formatted_price %> </p></ul>
+      <ul><p><%= link_to product.name, product_path(product.id) %></a> <%= product.description %> €<%= product.formatted_price %> </p></ul>
   </li>
 <% end  %>
 
@@ -12,3 +12,5 @@ Edit Link/Button at each product line? -->
 
 <!-- To READ:
 Dynamic link to each product. => API LINK_TO. Google "Rails link_to" documentation -->
+
+<!-- product ,  -->
