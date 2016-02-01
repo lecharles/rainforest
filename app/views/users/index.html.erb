@@ -1,0 +1,9 @@
+<h1>Currenly Rainforest's User list is</h1>
+<% @users.each do |user| %>
+  <ul>
+    <li>Client id-nº<%= user.id %></li>
+    <li><%= user.name %></li>
+    <li><%= user.email %></li>
+  </ul>
+
+<% end %>
