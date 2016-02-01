@@ -1,8 +1,10 @@
 
 class ProductsController < ApplicationController
+  # before_action :ensure_logged_in except:[:show]
 
   def index
     @products = Product.all
+    @product = Product.new
   end
 
   def show

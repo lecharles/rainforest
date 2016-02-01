@@ -6,10 +6,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to products_url, notice: "C'es bon! Signed up!"
+      redirect_to products_url, notice: "C'es bon! You Have Signed Up! NOW LOG IN :)"
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private #STRONG PARAMS

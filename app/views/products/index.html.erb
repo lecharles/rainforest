@@ -2,8 +2,14 @@
 <!-- <p>Find me in app/views/products/index.html.erb</p> -->
 <% @products.each do |product| %>
   <li>
-      <ul><p><%= link_to product.name, product_path(product.id) %></a> <%= product.description %> €<%= product.formatted_price %> </p></ul>
+      <ul><p><%= link_to product.name, product_path(product.id) %></a> <%= product.description %> €<%= product.formatted_price %> <%= link_to '| Edit', edit_product_path(product.id) if current_user %> </p></ul>
   </li>
+<% end  %>
+
+<% if current_user %>
+  <h2>Welcome to your Forest!</h2>
+  <p>Feel free to add a product to your list.</p>
+  <%= render 'form' %>
 <% end  %>
 
 <!-- To DO's:
