@@ -4,6 +4,7 @@
 
 <p><%= @product.name %>, <%= @product.description %></p>
 <p>€<%= @product.formatted_price %></p>
+<img src="<%= @product.url %>" alt="Surf Longboard">
 <p><%= link_to 'Edit this product', edit_product_path(@product) %></p>
 
 <h3>Reviews</h3>
