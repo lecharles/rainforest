@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to products_url, notice: "Ciao! out!"
+    redirect_to products_url, notice: "Ciao! See you soon!"
   end
 end

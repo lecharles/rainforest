@@ -2,7 +2,7 @@
 <% @users.each do |user| %>
   <ul>
     <li>Client id-nº<%= user.id %></li>
-    <li><%= user.name %></li>
+    <li><%= link_to user.name, user_path(user.id) %></li>
     <li><%= user.email %></li>
   </ul>
 

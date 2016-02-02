@@ -1,6 +1,7 @@
 
 class ProductsController < ApplicationController
-  # before_action :ensure_logged_in except:[:show]
+  # before_action :ensure_logged_in except:[:index]
+  before_action :ensure_logged_in, only: [:edit, :create, :update, :destroy]
 
   def index
     @products = Product.all

@@ -1,5 +1,6 @@
-<h1>Rainforest's Products' Index</h1>
-<!-- <p>Find me in app/views/products/index.html.erb</p> -->
+<h1>Rainforest <em>"Un bazar naturel"</em></h1>
+<p>Rainforest is an open market community for selling <em>"nature related"</em> products.</p>
+<p>Check out the product list below. If interested, sign up, add and edit products on the list and see who's part of the community!</p>
 <% @products.each do |product| %>
   <li>
       <ul><p><%= link_to product.name, product_path(product.id) %></a> <%= product.description %> €<%= product.formatted_price %> <%= link_to '| Edit', edit_product_path(product.id) if current_user %> </p></ul>
@@ -9,7 +10,8 @@
 <% if current_user %>
   <h2>Welcome to your Forest!</h2>
   <p>Feel free to add a product to your list.</p>
-  <%= render 'form' %>
+  <%= render 'form' %><br />
+  <%= link_to 'Contact the community', users_path %>
 <% end  %>
 
 <!-- To DO's:

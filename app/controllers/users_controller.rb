@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  # before_action :ensure_logged_in, only: [:edit, :create, :update, :destroy]
+  before_action :ensure_logged_in
+
+
   def index
     @users = User.all
   end
