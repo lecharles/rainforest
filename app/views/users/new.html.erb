@@ -1,14 +1,16 @@
-<h1>Hey User, Sign Up</h1>
+<!-- <h1>Hey User, Sign Up</h1> -->
 
 <%= form_for @user do |f| %>
 
   <% if @user.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
       <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+        <li>
+          Form is invalid.
+          <% @user.errors.full_messages.each do |message| %>
+            <%= message %>
+          <% end %>.
+        </li>
       </ul>
     </div>
   <% end %>

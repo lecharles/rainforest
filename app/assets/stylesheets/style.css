@@ -1,0 +1,215 @@
+/*
+===================================================
+TESTING & ADAPTING ICECRM Styles into RAINFOREST
+===================================================
+*/
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+}
+
+header {
+  background-color: white;
+}
+
+.container {
+  background: #CDE7CC;
+  color: #FFFEFD;
+  width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.logo {
+  border-top: 7.5px solid rgba(100, 136, 128, 0.3);
+  width: 205px;
+  margin: 0 auto;
+  padding-bottom: 5px;
+  display: inline-block;
+  text-align: left;
+
+}
+
+.userinfo {
+  border-top: 7.5px solid rgba(100, 136, 128, 0.3);
+  display: inline-block;
+  float: right;
+}
+
+
+.error_messages {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+#notice {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+
+#alert {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+/*.title {
+  text-align: center;
+  padding-top: 25px;
+}*/
+
+/*.footer{
+  width: 490px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}*/
+
+/*.footer p {
+  margin-top: 30px;
+  opacity: 0.45;
+  font-size: 0.65em;
+  color: #fff
+}*/
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1, p {
+  color: #648880;
+}
+h1, p {
+  margin-bottom: 22px;
+}
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+strong {
+  font-weight: 400;
+}
+
+/*
+  ========================================
+  Nav / Main Menu
+  ========================================
+*/
+nav {
+  width: 436px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-menu {
+  display: block;
+  color: #648880;
+  text-decoration: none;
+  border: 1px solid #D6D6D6;
+  background-color: white;
+  padding: 17px;
+  width: 436px
+
+}
+/*
+  ========================================
+  Links
+  ========================================
+*/
+a {
+  color: #906449;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+
+/*
+  ========================================
+  Form (new contact for now...)
+  ========================================
+*/
+
+form {
+  width: 336px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+/*fieldset {
+  text-align: center;
+}*/
+
+/*.login{
+  margin: 15px 0;
+}*/
+
+.field {
+  margin: 15px 0;
+}
+.field input{
+  border-radius: 5px;
+  display: block;
+  border: 1px solid #D6D6D6;
+  background-color: white;
+  padding: 9px;
+  text-align: center;
+  width: 282px;
+  margin: 0 auto;
+}
+
+input {
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[type=submit] {
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 10px auto;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  width: 300px;
+  background: green;
+}
+input[type=submit]:hover {
+  background: #fff;
+  color: green;
+}
+
+/*
+  ========================================
+  Table (All Contacts)
+  ========================================
+*/
+/*table {
+  width: 950px;
+  margin: 0 auto;
+  text-align: left;
+}*/
+
+/*.table-columns {
+  margin-right: 10px;
+}*/
+
+/*
+  ========================================
+  Show [each] Contact
+  ========================================
+*/
+/*.show-contact {
+  width: 500px;
+  margin: 0 auto;
+}*/

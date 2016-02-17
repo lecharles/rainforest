@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :ensure_logged_in, only: [:edit, :create, :update, :destroy]
-  before_action :ensure_logged_in
-
+  before_action :ensure_logged_in, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -14,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to products_url, notice: "C'es bon! You Have Signed Up! NOW LOG IN :)"
+      redirect_to products_url, notice: "Signed up successfully! Log in: to add, edit, and review products."
     else
       render :new
     end

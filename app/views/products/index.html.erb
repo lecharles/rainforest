@@ -1,11 +1,11 @@
-<h1>Rainforest <em>"Un bazar naturel"</em></h1>
-<p>Rainforest is an open market community for selling <em>"nature related"</em> products.</p>
-<p>Check out the product list below. If interested, sign up, add and edit products on the list and see who's part of the community!</p>
-<% @products.each do |product| %>
-  <li>
-      <ul><p><%= link_to product.name, product_path(product.id) %></a> <%= product.description %> €<%= product.formatted_price %> <%= link_to '| Edit', edit_product_path(product.id) if current_user %> </p></ul>
-  </li>
-<% end  %>
+<p>Rainforest is open market. Add, edit, review products and see who's part of the community!</p>
+<nav>
+  <% @products.each do |product| %>
+    <li class="main-menu">
+        <ul><p><%= link_to product.name, product_path(product.id) %> <%= product.description %> €<%= product.formatted_price %> <%= link_to '| Edit', edit_product_path(product.id) if current_user %> </p></ul>
+    </li>
+  <% end  %>
+</nav>
 
 <% if current_user %>
   <h2>Welcome to your Forest!</h2>

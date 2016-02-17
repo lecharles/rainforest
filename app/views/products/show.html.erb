@@ -1,10 +1,10 @@
 <h1>Your Product id# <%= @product.id %></h1>
 
-<%= link_to 'Back to basics', products_path %>
+<%= link_to 'Back to product list', products_path %>
 
 <p><%= @product.name %>, <%= @product.description %></p>
 <p>€<%= @product.formatted_price %></p>
-<img src="<%= @product.url %>" alt="Surf Longboard">
+<img src="<%= @product.url %>" height="300" width="300">
 <p><%= link_to 'Edit this product', edit_product_path(@product) %></p>
 
 <h3>Reviews</h3>
@@ -47,7 +47,7 @@
   <% end %>
 
 <% else %>
-  <p>yoO <%= link_to "You gotta log in", new_session_path %> to add a review.</p>
+  <p>Please <%= link_to "log in", new_session_path %> to add a review to this product.</p>
 <% end %>
 
 <!--

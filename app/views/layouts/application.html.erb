@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Rainforest</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-    <% if flash[:notice] %>
-      <p id="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-      <p id="alert"><%= flash[:alert] %></p>
-    <% end %>
+  <head>
+    <title>Bazar</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <div class="container">
+        <header>
+          <h1 class="logo"><%= link_to 'Bazar', products_path %><em> Ouvert</em></h1>
+          <p class="userinfo">
+            <% if current_user %>
+            Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+            <% else %>
+            <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+            <% end %>
+          </p>
+        </header>
 
-    <%= yield %>
-    <p class="userinfo">
-      <% if current_user %>
-        Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-      <% else %>
-        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-      <% end %>
-    </p>
+        <% if flash[:notice] %>
+          <p id="notice"><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p id="alert"><%= flash[:alert] %></p>
+        <% end %>
+
+        <%= yield %>
+      </div>
   </body>
 </html>
 
-<!-- reviewTHIS! -->
-<!-- user@remember.com
-password -->
+<!-- review THIS! -->
+
+<!-- FMI: This is a working user: -->
+<!-- Login: user@remember.com
+Password: password -->
