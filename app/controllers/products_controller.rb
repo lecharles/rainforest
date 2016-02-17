@@ -9,8 +9,15 @@ class ProductsController < ApplicationController
     else
         Product.all
     end
+
+    if request.xhr?
+      render @products
+    end
+
     @product = Product.new
+
   end
+
 
   def show
     @product = Product.find(params[:id])
