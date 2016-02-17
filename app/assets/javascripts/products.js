@@ -4,15 +4,15 @@ $(document).on('ready page:load', function() {
     event.preventDefault();
     var searchValue = $('#search').val();
 
-      // THE GET.SCRIPT WAY:
-      $.getScript('/products?search=' + searchValue);
+    // THE GET.SCRIPT WAY:
+    $.getScript('/products?search=' + searchValue);
 
-      // THE SHORTHAND WAY:
-      // $.get('/products?search=' + searchValue)
-      //  .done(function(data){
-      //    console.log(data);
-      //    $('#products').html(data);
-      //  });
+    // THE SHORTHAND WAY:
+    // $.get('/products?search=' + searchValue)
+    //  .done(function(data){
+    //    console.log(data);
+    //    $('#products').html(data);
+    //  });
 
     // THE GENERAL WAY:
     //  $.ajax({
@@ -23,6 +23,13 @@ $(document).on('ready page:load', function() {
     //   $('#products').html(data);
     // });
   });
+
+  $(window).scroll(function() {
+     if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+       return alert('near bottom');
+     }
+   });
+   
 });
 
 // THE VANILLA JAVASCRIPT WAY OF DOING AJAX:
