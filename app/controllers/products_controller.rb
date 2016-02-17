@@ -4,7 +4,11 @@ class ProductsController < ApplicationController
   before_action :ensure_logged_in, only: [:edit, :create, :update, :destroy]
 
   def index
-    @products = Product.all
+    @products = if params[:search]
+      Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+        Product.all
+    end
     @product = Product.new
   end
 

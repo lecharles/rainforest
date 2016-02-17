@@ -1,11 +1,36 @@
 <p>Rainforest is open market. Add, edit, review products and see who's part of the community!</p>
 <nav>
-  <% @products.each do |product| %>
-    <li class="main-menu">
-        <ul><p><%= link_to product.name, product_path(product.id) %> <%= product.description %> €<%= product.formatted_price %> <%= link_to '| Edit', edit_product_path(product.id) if current_user %> </p></ul>
-    </li>
-  <% end  %>
+  <%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+  <% end %>
+
+  <div id="products">
+    <%= render @products %>
+  </div>
 </nav>
+
+<script type="text/javascript">
+  function display_search_results() {
+    // readyState === 4 means that the asynchronous request completed successfully
+    if (this.readyState === 4) {
+      console.log(this);
+      document.getElementById('products').innerHTML = this.responseText;
+    }
+  }
+
+  var form = document.getElementById('search-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var searchValue = document.getElementById('search').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = display_search_results;
+    xhr.open('GET', '/products?search=' + searchValue, true);
+    xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xhr.send();
+  });
+</script>
 
 <% if current_user %>
   <h2>Welcome to your Forest!</h2>
@@ -14,11 +39,5 @@
   <%= link_to 'Contact the community', users_path %>
 <% end  %>
 
-<!-- To DO's:
-Add New Product Link/Button.
-Edit Link/Button at each product line? -->
-
 <!-- To READ:
 Dynamic link to each product. => API LINK_TO. Google "Rails link_to" documentation -->
-
-<!-- product ,  -->

@@ -1,0 +1,5 @@
+<% @products.each do |product| %>
+  <li class="main-menu">
+      <ul><p><%= link_to product.name, product_path(product.id) %> <%= product.description %> €<%= product.formatted_price %> <%= link_to '| Edit', edit_product_path(product.id) if current_user %> </p></ul>
+  </li>
+<% end  %>
