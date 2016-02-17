@@ -9,13 +9,18 @@ class ProductsController < ApplicationController
     else
         Product.all
     end
-
-    if request.xhr?
-      render @products
-    end
+    
+    # REPLACED BY respond_to:
+    # if request.xhr?
+    #   render @products
+    # end
 
     @product = Product.new
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
 

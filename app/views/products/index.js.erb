@@ -1,0 +1,11 @@
+$('#products').html("<%= j(render @products) %>");
+
+
+// FYI:
+// escape_javascript <=> j
+//
+// THIS VIEW DOES THE SAME AS:
+// .done(function(data){
+//    console.log(data);
+//    $('#products').html(data);
+//  });

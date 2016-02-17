@@ -4,12 +4,15 @@ $(document).on('ready page:load', function() {
     event.preventDefault();
     var searchValue = $('#search').val();
 
+      // THE GET.SCRIPT WAY:
+      $.getScript('/products?search=' + searchValue);
+
       // THE SHORTHAND WAY:
-      $.get('/products?search=' + searchValue)
-       .done(function(data){
-         console.log(data);
-         $('#products').html(data);
-       });
+      // $.get('/products?search=' + searchValue)
+      //  .done(function(data){
+      //    console.log(data);
+      //    $('#products').html(data);
+      //  });
 
     // THE GENERAL WAY:
     //  $.ajax({
