@@ -9,18 +9,31 @@ class ProductsController < ApplicationController
     else
         Product.all
     end
-    
+
+    @products = @products.order('products.created_at DESC').page(params[:page])
+
     # REPLACED BY respond_to:
     # if request.xhr?
     #   render @products
+    # else
+      respond_to do |format|
+        format.html {
+          @product = Product.new
+          render :index
+        }
+        format.js
+      end
+
+      # format.html
+      # is equivalent to:
+
+      # format.html {
+      #   render :index
+      # }
+
     # end
 
-    @product = Product.new
 
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
 
