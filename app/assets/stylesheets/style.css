@@ -41,7 +41,7 @@ header {
 }
 
 
-.error_messages {
+.error_messages, .alert {
   background-color: red;
   color: white;
   text-align: center;
@@ -84,6 +84,10 @@ header {
   ========================================
 */
 
+.comment {
+  color: #648880;
+  text-align: center;;
+}
 h1, p {
   color: #648880;
   text-align: center;;

@@ -1,2 +1,10 @@
 // alert("I’m responding to your request!");
 $("#review-list").html("<%= escape_javascript(render(:partial => 'products/reviews')) %>");
+
+<% if @review.errors.present? %>
+  $("#review-form-errors").html("<%= escape_javascript(render(:partial => '/products/review_form_errors')) %>");
+<% else %>
+  $("#review-form-errors").html("");
+  $("#review-list").html("<%= escape_javascript(render(:partial => '/products/reviews')) %>");
+  $("#new_review")[0].reset();
+<% end %>

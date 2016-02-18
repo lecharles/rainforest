@@ -1,15 +1,12 @@
 <% @product.reviews.each do |review| %>
   <div class='review'>
-    <p>
-      <div class='comment'>
-        <%= review.comment %>
+    <div class='comment'>
+      <p><%= review.comment %></p>
+    </div>
+    <% if review.user != nil %>
+      <div class='poster'>
+        <p> by <%= review.user.name %> on <%= review.created_at %></p>
       </div>
-      <br>
-      <% if review.user != nil %>
-        <div class='poster'>
-          <em> Written by <%= review.user.name %> available at <%= review.user.email %> Back then in: <%= review.created_at %></em>
-        </div>
-      <% end %>
-    </p>
+    <% end %>
   </div>
 <% end %>

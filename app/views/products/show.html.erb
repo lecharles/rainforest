@@ -19,6 +19,10 @@
   <h4>New Review</h4>
 
   <%= form_for [@product, @review], :remote => true do |f| %>
+    <div id='review-form-errors'>
+      <%= render :partial => "/products/review_form_errors" %>
+    </div>
+
     <% if @review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -43,18 +47,6 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a review to this product.</p>
 <% end %>
-
-<!-- <script type="text/javascript"> -->
-
-  // $(document).ready(function() {
-  //    $("#new_review")
-  //       .on('ajax:beforeSend', function() {alert("loading!");})
-  //       .on('ajax:success', function(data, status, xhr) {alert("success!");})
-  //       .on('ajax:error', function(xhr, status, error) {alert("error!");})
-  //       .on('ajax:complete', function() {alert("complete!");});
-  // });
-
-<!-- </script> -->
 
 <!--
 To Do's:
