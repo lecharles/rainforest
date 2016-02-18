@@ -98,8 +98,9 @@ h2, h3, h4 {
 }
 
 h1, p {
-  margin-bottom: 22px;
+  /*margin-bottom: 22px;*/
 }
+
 h1 {
   font-size: 36px;
   line-height: 44px;

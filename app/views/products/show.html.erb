@@ -10,6 +10,7 @@
 <h3>Reviews</h3>
 
   <p>You are reading reviews for: <%= @product.name %></p>
+  <br />
 
   <div id=review-list>
     <%= render :partial => "reviews" %>
@@ -47,6 +48,23 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a review to this product.</p>
 <% end %>
+
+<script type="text/javascript">
+  $(function() {
+     $("#new_review")
+        .on('ajax:beforeSend', function() { // set this code to happen just before the ajax request is made
+          $("input[type='submit']") // make changes to the submit button
+            .val('Saving...') // change the text on the button
+            .attr('disabled', 'disabled'); // disable the button
+        })
+        .on('ajax:complete', function() {
+          $("input[type='submit']")
+            .val('Create Review')
+            .removeAttr('disabled');
+        });
+  });
+</script>
+
 
 <!--
 To Do's:
