@@ -16,23 +16,28 @@ class ProductsController < ApplicationController
     # if request.xhr?
     #   render @products
     # else
-      respond_to do |format|
-        format.html {
-          @product = Product.new
-          render :index
-        }
-        format.js
-      end
+      # respond_to do |format|
+      #   format.html {
+      #     @product = Product.new
+      #     render :index
+      #   }
+      #   format.js
+      # end
+    # end
 
+      # note:--------------
       # format.html
       # is equivalent to:
 
       # format.html {
       #   render :index
       # }
+      # ------------------
 
-    # end
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
 
   end
 

@@ -4,7 +4,7 @@ $(document).on('ready page:load', function() {
     event.preventDefault();
     var searchValue = $('#search').val();
 
-    // THE GET.SCRIPT WAY:
+    // THE GET.SCRIPT WAY => this is what tells the controller to go for the '.js' actions & potentially views
     $.getScript('/products?search=' + searchValue);
 
     // THE SHORTHAND WAY:
@@ -26,10 +26,11 @@ $(document).on('ready page:load', function() {
 
   $(window).scroll(function() {
      if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-       return alert('near bottom');
+      //  return alert('near bottom');
+       console.log($('.pagination span.next').children().attr('href'));
+       $.getScript($('.pagination span.next').children().attr('href'));
      }
    });
-   
 });
 
 // THE VANILLA JAVASCRIPT WAY OF DOING AJAX:
