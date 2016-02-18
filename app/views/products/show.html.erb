@@ -11,15 +11,9 @@
 
   <p>You are reading reviews for: <%= @product.name %></p>
 
-  <% @product.reviews.each do |review| %>
-    <p>
-      <%= review.comment %>
-      <br>
-      <% if review.user != nil %>
-        <em> Written by <%= review.user.name %> available at <%= review.user.email %> Back then in: <%= review.created_at %></em>
-      <% end %>
-    </p>
-  <% end %>
+  <div id=review-list>
+    <%= render :partial => "reviews" %>
+  </div>
 
 <% if current_user %>
   <h4>New Review</h4>
@@ -49,6 +43,18 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to add a review to this product.</p>
 <% end %>
+
+<!-- <script type="text/javascript"> -->
+
+  // $(document).ready(function() {
+  //    $("#new_review")
+  //       .on('ajax:beforeSend', function() {alert("loading!");})
+  //       .on('ajax:success', function(data, status, xhr) {alert("success!");})
+  //       .on('ajax:error', function(xhr, status, error) {alert("error!");})
+  //       .on('ajax:complete', function() {alert("complete!");});
+  // });
+
+<!-- </script> -->
 
 <!--
 To Do's:
